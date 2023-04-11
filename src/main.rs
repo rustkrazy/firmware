@@ -29,7 +29,7 @@ fn main() -> anyhow::Result<()> {
         let mut file = File::create(fw)?;
 
         let url = format!(
-            "https://github.com/raspberrypi/firmware/blob/{}/boot/{}",
+            "https://github.com/raspberrypi/firmware/blob/{}/boot/{}?raw=true",
             FIRMWARE_VERSION, fw
         );
         let mut resp = reqwest::blocking::get(url)?.error_for_status()?;
